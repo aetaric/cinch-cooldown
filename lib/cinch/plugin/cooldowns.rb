@@ -15,7 +15,7 @@ module Cinch
         @cooldowns  = shared[:cooldowns] if shared.key?(:cooldowns)
 
         # Don't run if we there's no cooldown config
-        return true unless @config
+        #return true unless @config
 
         bot.synchronize(:cooldown) do
           # Avoid cooldown if we don't have a channel
@@ -52,9 +52,9 @@ module Cinch
 
       def self.config_broken?(channel)
         # return true if the config doesn't have needed info this channel
-        return true unless @config.key?(channel) &&
-                           config_for(channel).key?(:global) &&
-                           config_for(channel).key?(:user)
+        #return true unless @config.key?(channel) &&
+        #                   config_for(channel).key?(:global) &&
+        #                   config_for(channel).key?(:user)
         # otherwise abort cooldown enforcement
         false
       end
