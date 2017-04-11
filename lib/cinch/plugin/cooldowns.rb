@@ -122,10 +122,10 @@ module Cinch
 
         # Create a cooldown for the channel
         @cooldowns[channel][:global] =
-          Cooldown.new(@config[channel][:global])
+          Cooldown.new(10)
         # Create a cooldown for the user
         @cooldowns[channel][user] =
-          Cooldown.new(@config[channel][:user])
+          Cooldown.new(20)
 
         warn "[[ Cooldown Triggered for user: #{user} ]]"
       end
